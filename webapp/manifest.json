@@ -57,6 +57,12 @@
         "settings": {
           "bundleName": "curso.productos.i18n.i18n"
         }
+      },
+      "product": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {},
+        "uri": "Products.json",
+        "preload": false
       }
     },
     "resources": {

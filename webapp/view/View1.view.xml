@@ -2,6 +2,23 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <content />
+        <content>
+        
+            <List id="ProductList"
+                headerText="{i18n>ListTitle}" 
+                class="sapUiResponsiveMargin" 
+                width="auto" 
+                items="{product>/Products}">
+            
+            <ObjectListItem id="ObjectList"
+                    title="{product>Quantity} x {product>ProductName}"
+                    number="{path: 'product>ExtendedPrice'}"
+                    numberUnit="Dollars"
+                    numberState='{= ${product>ExtendedPrice} > 10  ? "Error" : "Success" }'
+                    />            
+            
+            </List>
+            
+        </content>
     </Page>
 </mvc:View>
