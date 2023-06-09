@@ -14,9 +14,18 @@
                     title="{product>Quantity} x {product>ProductName}"
                     number="{path: 'product>ExtendedPrice'}"
                     numberUnit="Dollars"
-                    numberState='{= ${product>ExtendedPrice} > 10  ? "Error" : "Success" }'
-                    />            
-            
+                    numberState="{path: 'product>ExtendedPrice', formatter: '.formatter.numberState'}">      
+                <firstStatus>
+                    <ObjectStatus
+                        id="statustext"
+                        text= "{parts: [
+                        'product>ShipperName',
+                        'product>ShippedDate',
+                        'product>Status'],
+                        formatter: '.formatter.statusText'}"
+                        />      
+                </firstStatus>
+            </ObjectListItem>
             </List>
             
         </content>
